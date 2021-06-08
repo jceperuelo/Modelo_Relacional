@@ -1,0 +1,134 @@
+//EJ1//MR//
+
+ATLETA{#nºdorsal, nombre, atributo3, atributo4, *idrol1, *idrol2}
+
+opcion2.
+ATLETA{#nºdorsal, nombre, atributo3, atributo4, *da_relevo_a}
+--------------------------------------------------------------
+
+//EJ2//MR//
+
+ELEMENTO{#nombre_elem, peso_atómico, símbolo, nºatómico}
+
+GASEOSO{#nombre_comp,estado,coef_expan, temp_lic}
+
+LÍQUIDO{#nombre_comp,estado,densidad, temp_evap}
+
+SÓLIDO{#nombre_comp, estado,color,olor,dureza}
+
+COMPUESTO POR{#id, *nombre_elem, *nombre_comp, proporción}
+
+--------------------------------------------------------------
+
+//EJ3//MR//
+
+
+SUCURSAL {#Nºsucursal, Ciudad, Activo}
+
+CLIENTE {#Dni, Nombre, Apellidos, Dirección, Ciudad}
+
+CUENTA {#nº cuenta, saldo}
+
+ABRIR n:n {#id, *nºcuenta, *nºsucursal, *dni}
+
+TRANSACCIÓN {#nºtransacción, fecha, tipoOperación, cantidad, *nºcuenta}
+
+-------------------------------------------------
+
+//EJ4//MR//
+
+
+-------------------------------------------------
+//EJ5//MR//
+
+FONDO{#título, #autor, cantidad  }
+
+LIBRO{#Signatura, disponible, *título, *autor, *nºpréstamo}
+
+PRÉSTAMO{#nºpréstamo, fecha_prest, *nºsocio}
+
+PRÉSTAMO_E{#nºpréstamo, fecha_devol, fecha prest, tipo}
+
+SOCIOS{#nºsocio, nombre, apellidos, teléfono, fecha_cad, *nºdías}
+
+SANCIÓN{#nºdías}
+-------------------------------------------------
+
+//EJ6//MR//
+
+CLIENTE{#Cod_cliente, atributo1, atributo2}
+
+PEDIDO{#Cod_pedido, fecha_pedido, *Cod_producto, num_unidades, *Cod_cliente}
+
+PRODUCTO{#Cod_producto, cantidad}
+
+PROVEEDOR{#Cod_proveedor, atributo1, atributo2, *Cod_proveedor, unidades, fecha_encargo}
+
+-----------------------------------------------------------
+
+//EJ7//MR//
+
+ARRENDATARIO {#NIF, nombre_fiscal, nombre_firmante, dirección, cogp_postal,localidad}
+
+ALQUILA {#número_de_cuenta, dias_de_pago,fecha_alquiler,fecha_sin_alquiler,importe_alquiler , NIF}
+
+NAVE {#código_nave, poligono, calle, número ,NIF} 
+
+Recibo (#número_recibo, importe_total, importe_IVA, pagado, fecha, NIF, código_nave ) 
+
+-----------------------------------------------------------
+
+//EJ8//MR//
+
+PISO{#puerta,DNI,nombre,apellidos,dirección,codigo_postal, provincia,telefono, localidad,codigo_cargo}
+
+CARGO{#codigo,carga,nombre,funciones,fecha_posesión}
+
+ANOTACIÓN{#codigo anotacion,fecha,importe}
+
+INGRESO_RECIBIDO{#codigo_anotacion,mes,pagado}
+
+INGRESO_EXTRA{#codigo_anotación,concepto}
+
+GASTO_FIJO{#codigo_anotacion,fecha inicio,fecha fin,consumo,codigo tipo gasto}
+
+TIPO_GASTO_FIJO{#codigo_tipo_gasto,nombre,descripción}
+
+GASTO_VARIABLE{#codigo_antación,fecha_factura,concepto,numero_factura}
+
+
+-----------------------------------------------------------
+-----------------------------------------------------------
+-----------------------------------------------------------
+-----------------------------------------------------------
+-----------------------------------------------------------
+-----------------------------------------------------------
+-----------------------------------------------------------
+
+
+//EJ3// ER-MR//
+COMUNIDAD AUTONOMA{#id1, población, nombre, superfície}
+
+LOCALIDAD{#id2, nombre, población, *cod_postal, *id1}
+
+PROVINCIAS{#cod_postal, superfície, población, nombre, *id1}
+---------------------------------------------------
+
+//EJ9// ER-MR//
+
+RECETA{#id1, minutos, dificultad, nombre, descripción, tipos}
+
+CONTIENE{*#id1, *#id2, cantidad}
+
+ALIMENTOS{#id2, nombre}
+-------------------------------------------------------
+
+//EJ15// ER-MR//
+
+MENÚ{#id, Temperatura, nºpersonas, cantidad, fecha_menu}
+
+PREPARAR{#identificador,*id, *id1}
+
+1.PLATO{#id1,nombre, descripción}
+2N.PLATO{#id1,nombre, descripción}
+POSTRE{#id1,nombre, descripción}
