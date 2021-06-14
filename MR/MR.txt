@@ -35,10 +35,6 @@ TRANSACCIÓN {#nºtransacción, fecha, tipoOperación, cantidad, *nºcuenta}
 
 -------------------------------------------------
 
-//EJ4//MR//
-
-
--------------------------------------------------
 //EJ5//MR//
 
 FONDO{#título, #autor, cantidad  }
@@ -101,6 +97,8 @@ GASTO_VARIABLE{#codigo_antación,fecha_factura,concepto,numero_factura}
 -----------------------------------------------------------
 -----------------------------------------------------------
 -----------------------------------------------------------
+EJERCICIOS DE LA UNIDAD ANTERIOR CON EL MODELO RELACIONAL 
+-----------------------------------------------------------
 -----------------------------------------------------------
 -----------------------------------------------------------
 -----------------------------------------------------------
@@ -114,6 +112,79 @@ LOCALIDAD{#id2, nombre, población, *cod_postal, *id1}
 PROVINCIAS{#cod_postal, superfície, población, nombre, *id1}
 ---------------------------------------------------
 
+//EJ4// ER-MR//
+
+GUERRA{#id, año_fin, año_inicio, nombre}
+
+BANDOS {#id1, ganadores, fecha_f, fecha_i *id}
+
+PARTICIPAR {#id1, #id2
+
+PAISES {#id2, nombre, *id3}
+
+INDEPENDIENTES {#id3, año_inicio, año_fin}
+---------------------------------------------------
+
+//EJ5// ER-MR//
+
+PIEZAS {#modelo,tipo, precio, componentes, descripción, *id}
+
+ESTANTERIAS {#id, letras}
+
+ALMACENES {#numero, nombre_estanterias, dirección, descripción, *id}
+
+---------------------------------------------------
+//EJ6// ER-MR//
+
+ARTÍCULO {#id, nombre, comentarios, deteriodo}
+
+CREAR {#id, #id_autor}
+
+AUTOR {#id_autor, nombre, país}
+
+PRÉSTAMO {#id1, fecha_dev, fecha_tope, fecha_préstamo}
+
+REALIZAR {#id1, #cod_socio}
+
+LIBROS {#num_pag, cod_art1, nombre, año_obra, id1}
+
+CDs {#n_reproducciones, cod_art2, nombre, año_obra, id1}
+
+PELÍCULAS {#duracción, cod_art3, nombre, año_obra, id1}
+
+SOCIOS {#cod_socio, nombre, apellidos, dirección, dni, teléfono}
+
+---------------------------------------------------
+//EJ7// ER-MR//
+
+EMPLEADOS/AS {#cod_trabajador, dni, nombre, apellidos, teléfono, dirección, n_seguridad_social, id_rol1, *cod_dep}
+
+CONTRATOS {*id2, *cod_trabajador,*id3, fecha_inicio, fecha_final}
+
+NÓMINAS {#id, salario, fecha}
+
+DEPARTAMENTO {#cod_dep, nombre, *cod_trabajador}
+
+CATEGORIA_PROFESIONAL {#id3}
+
+---------------------------------------------------
+//EJ8// ER-MR//
+
+CLIENTES {#trg_credito, dni, nombre, apellidos, dirección, teléfono, n_reserva,}
+
+REALIZAR {#trg_credito, #n_reservas}
+
+RESERVAS {#n_reservas, plazas}
+
+TAGETA_EMBARQUE {#id, n_asientos, planta, columnas, filas, *trg_credito, *n_reservas, *id2}
+
+VUELO {#id2, fecha, h_llegada, h_salida, *cod_aeropuerto, *cod_avión}
+
+AVIONES {#cod_avión, n_plazas}
+
+AEROPUERTO {#cod_aeropuerto, nombre, país, localidad}
+
+---------------------------------------------------
 //EJ9// ER-MR//
 
 RECETA{#id1, minutos, dificultad, nombre, descripción, tipos}
@@ -121,7 +192,50 @@ RECETA{#id1, minutos, dificultad, nombre, descripción, tipos}
 CONTIENE{*#id1, *#id2, cantidad}
 
 ALIMENTOS{#id2, nombre}
+
 -------------------------------------------------------
+//EJ10// ER-MR//
+
+ARBITRO {#n_colegiado, nombre}
+
+PARTIDOS {#id_partido, jornada, fecha, *n_colegiado, *id_estadio}
+
+ESTADIO {#id_estadio, nombre}
+
+EQUIPOS {#cod_equipo, nombre, *id_partido, *id, *id_estadio}
+
+SALARIO {#id, contrato, ficha}
+
+JUGADORES {#id_jugador, nombre, apellidos, edad, *id, *cod_equipo}
+
+TARGETAS {#id, tg_roja, tg_amarilla}
+
+FUERA DE JUEGO {#id}
+
+GOLES {#id, en_propia}
+
+LESIONES {#id, duración, tipo_lesión}
+
+---------------------------------------------------
+//EJ11// ER-MR//
+
+ACCIDENTES_GEOGRÁFICOS {#id2, nombre, posición_V, posición_H, eje_tierra}
+
+ESTAR {#id, #id2}
+
+RIOS {#id_r, longitud ,id2}
+
+MONTAÑAS {#id_m, altura,id2}
+
+LAGOS {#id_l, extensión,id2}
+
+PASSAR {#id1, #id_r}
+
+PAÍS {#id, nombre}
+
+LOCALIDADES {#id1, nombre}
+
+---------------------------------------------------
 
 //EJ15// ER-MR//
 
